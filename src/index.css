@@ -1,0 +1,240 @@
+:root {
+  --bodyBackground: #dff;
+  --bodyText: #27b4a1;
+
+  --backgroundColor: #fff;
+  --textColor: #000;
+
+  --backgroundColorCorrect: #c5ffdf;
+  --textColorCorrect: #0f9743;
+
+  --backgroundColorWrong: #ffbbbb;
+  --textColorWrong: #be1c1c;
+
+  --fonts: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--fonts);
+  background-color: var(--bodyBackground);
+
+  min-width: 320px;
+  min-height: 100dvh;
+
+  overflow-x: hidden;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  text-align: center;
+  align-items: center;
+  
+  background: var(--backgroundColor);
+
+  width: 100%;
+}
+
+header div {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  background-color: var(--textColor);
+  color: var(--backgroundColor);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  flex-wrap: wrap;
+
+  text-align: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+footer div {
+  padding: 20px;
+}
+
+.bodyBoxContainer {
+  width: 100%;
+}
+
+.bodyBox {
+  padding: 20px;
+  border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--backgroundColor);
+}
+
+input[type=text] {
+  background: transparent;
+
+  font-family: var(--fonts);
+  font-size: large;
+
+  border: 1px solid var(--textColor);
+  border-radius: 10px;
+  padding: 5px;
+
+  outline: none;
+}
+
+button {
+  background: transparent;
+
+  font-family: var(--fonts);
+  font-size: large;
+  font-weight: 500;
+  text-transform: uppercase;
+
+  border: 1px solid var(--textColor);
+  border-radius: 10px;
+  padding: 5px;
+
+  cursor: pointer;
+
+  outline: none;
+}
+
+.questionHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  text-align: center;
+  align-items: center;
+
+  width: 100%;
+}
+
+label {
+  display: flex;
+
+  cursor: pointer;
+
+  font-weight: 500;
+
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.375em;
+}
+label input {
+  position: absolute;
+  left: -9999px;
+}
+label input:checked + span {
+  background-color: var(--bodyBackground);
+}
+label input:checked + span:before {
+  box-shadow: inset 0 0 0 0.4375em var(--bodyText);
+}
+label span {
+  display: flex;
+  align-items: center;
+  padding: 0.375em 0.75em 0.375em 0.375em;
+  border-radius: 99em;
+  transition: 0.25s ease;
+}
+label span:hover {
+  background-color: var(--bodyBackground);
+}
+label span:before {
+  display: flex;
+  flex-shrink: 0;
+  content: "";
+  background-color: #fff;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  margin-right: 0.375em;
+  transition: 0.25s ease;
+  box-shadow: inset 0 0 0 0.125em var(--bodyText);
+}
+
+.answer {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.resultBoxContainer {
+  width: 100%;
+
+  background-color: var(--backgroundColor);
+
+  padding: 10px 0 0 0;
+  border-radius: 20px;
+
+  margin-bottom: 150px;
+  margin-top: 90px;
+}
+.resultBoxContainer h1,
+.resultBoxContainer h3 {
+  text-align: center;
+}
+
+.resultBoxCorrect {
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--backgroundColorCorrect);
+  color: var(--textColorCorrect);
+
+  border: 1px solid var(--textColorCorrect);
+}
+
+.resultWrong {
+  padding: 20px;
+  border-radius: 20px;
+  margin: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--backgroundColorWrong);
+  color: var(--textColorWrong);
+
+  border: 1px solid var(--textColorWrong);
+}
